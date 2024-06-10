@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useNavigate } from 'react-router-dom'; // Permire las conexiones entre componentes.
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -14,7 +15,7 @@ import MenuItem from '@mui/material/MenuItem';
 import SignLanguageIcon from '@mui/icons-material/SignLanguage';
 
 const courseOptions = ['Saludos', 'Números', 'Colores', 'Animales'];
-const pages = ['Inicio', 'Cursos', 'Iniciar Sesión', 'Crear Cuenta'];
+const pages = ['Inicio', 'Cursos', 'Iniciar Sesión', 'Crear Cuenta', 'Nosotros'];
 const settings = ['Perfil', 'Cuenta', 'Panel', 'Cerrar Sesión'];
 
 function ResponsiveAppBar() {
@@ -22,6 +23,8 @@ function ResponsiveAppBar() {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const [anchorElCursosDesktop, setAnchorElCursosDesktop] = React.useState(null); // Vista para Escritorio.
   const [anchorElCursosMobile, setAnchorElCursosMobile] = React.useState(null); // Vista para mobil.
+
+  const navigate = useNavigate();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -50,6 +53,14 @@ function ResponsiveAppBar() {
   const handleCloseCourseMenu = () => {
     setAnchorElCursosDesktop(null);
     setAnchorElCursosMobile(null);
+  };
+
+  const handlePageClick = (page) => {
+    handleCloseNavMenu();
+    if (page === 'Nosotros') {
+      navigate('/aboutUs');
+    }
+    // AQUI PODEMOS AGREGAR MAS LINKS A LOS COMPONENTES DE LA PAGINA
   };
 
   return (
@@ -135,7 +146,7 @@ function ResponsiveAppBar() {
                       </Menu>
                     </div>
                   ) : (
-                    <MenuItem key={page} onClick={handleCloseNavMenu}>
+                    <MenuItem key={page} onClick={() => handlePageClick(page)}>
                       <Typography textAlign="center">{page}</Typography>
                     </MenuItem>
                   )}
@@ -173,7 +184,7 @@ function ResponsiveAppBar() {
                   </Button>
                 ) : (
                   <Button
-                    onClick={handleCloseNavMenu}
+                    onClick={() => handlePageClick(page)}
                     sx={{ my: 4, mr: 4, color: '#F8F1FF', display: 'block' }}
                   >
                     {page}

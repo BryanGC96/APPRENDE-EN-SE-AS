@@ -3,6 +3,7 @@ import './App.css'
 import ResponsiveAppBar from './components/Header';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
+import AboutUs from './components/About';
 
 
 function App() {
@@ -11,9 +12,11 @@ function App() {
       <div className='app-container'>
         <ResponsiveAppBar /> {/**Navbar */}
         <main className='content'>
-          {/* <Route path='/' element={</>} /> */}
-          {/* <Route path='/' element={</>} /> */}
-          {/* <Route path='/' element={</>} /> */}
+          <Routes>
+            {/* <Route path='/' element={</>} /> */}
+            <Route path='/aboutUs' element={<AboutUs />} />
+            {/* <Route path='/' element={</>} /> */}
+          </Routes>
         </main>
         <Footer />
       </div>
@@ -21,5 +24,5 @@ function App() {
   )
 }
 
-export default App
+export default App;
 

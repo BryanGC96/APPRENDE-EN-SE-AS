@@ -14,14 +14,14 @@ import MenuItem from '@mui/material/MenuItem';
 import SignLanguageIcon from '@mui/icons-material/SignLanguage';
 
 const courseOptions = ['Saludos', 'Números', 'Colores', 'Animales'];
-const pages = ['Home', 'Courses', 'Log In', 'Sign Up'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pages = ['Inicio', 'Cursos', 'Iniciar Sesión', 'Crear Cuenta'];
+const settings = ['Perfil', 'Cuenta', 'Panel', 'Cerrar Sesión'];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-  const [anchorElCoursesDesktop, setAnchorElCoursesDesktop] = React.useState(null); // Vista para Escritorio.
-  const [anchorElCoursesMobile, setAnchorElCoursesMobile] = React.useState(null); // Vista para mobil.
+  const [anchorElCursosDesktop, setAnchorElCursosDesktop] = React.useState(null); // Vista para Escritorio.
+  const [anchorElCursosMobile, setAnchorElCursosMobile] = React.useState(null); // Vista para mobil.
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -35,21 +35,21 @@ function ResponsiveAppBar() {
     setAnchorElNav(null);
   };
 
-  const handleOpenCoursesDesktopMenu = (event) => {
-    setAnchorElCoursesDesktop(event.currentTarget);
+  const handleOpenCursosDesktopMenu = (event) => {
+    setAnchorElCursosDesktop(event.currentTarget);
   };
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
 
-  const handleOpenCoursesMobileMenu = (event) => {
-    setAnchorElCoursesMobile(event.currentTarget);
+  const handleOpenCursosMobileMenu = (event) => {
+    setAnchorElCursosMobile(event.currentTarget);
   };
 
   const handleCloseCourseMenu = () => {
-    setAnchorElCoursesDesktop(null);
-    setAnchorElCoursesMobile(null);
+    setAnchorElCursosDesktop(null);
+    setAnchorElCursosMobile(null);
   };
 
   return (
@@ -106,15 +106,15 @@ function ResponsiveAppBar() {
             >
               {pages.map((page) => (
                 <div key={page}>
-                  {page === 'Courses' ? (
+                  {page === 'Cursos' ? (
                     <div>
                       <MenuItem
-                        onClick={handleOpenCoursesMobileMenu}
+                        onClick={handleOpenCursosMobileMenu}
                       >
                         <Typography textAlign="center">{page}</Typography>
                       </MenuItem>
                       <Menu
-                        anchorEl={anchorElCoursesMobile}
+                        anchorEl={anchorElCursosMobile}
                         anchorOrigin={{
                           vertical: 'top',
                           horizontal: 'right',
@@ -124,7 +124,7 @@ function ResponsiveAppBar() {
                           vertical: 'top',
                           horizontal: 'right',
                         }}
-                        open={Boolean(anchorElCoursesMobile)}
+                        open={Boolean(anchorElCursosMobile)}
                         onClose={handleCloseCourseMenu}
                       >
                         {courseOptions.map((option) => (
@@ -164,9 +164,9 @@ function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
             {pages.map((page) => (
               <div key={page}>
-                {page === 'Courses' ? (
+                {page === 'Cursos' ? (
                   <Button
-                    onClick={handleOpenCoursesDesktopMenu}
+                    onClick={handleOpenCursosDesktopMenu}
                     sx={{ my: 4, mr: 4, color: '#F8F1FF', display: 'block' }}
                   >
                     {page}
@@ -179,9 +179,9 @@ function ResponsiveAppBar() {
                     {page}
                   </Button>
                 )}
-                {page === 'Courses' && (
+                {page === 'Cursos' && (
                   <Menu
-                    anchorEl={anchorElCoursesDesktop}
+                    anchorEl={anchorElCursosDesktop}
                     anchorOrigin={{
                       vertical: 'top',
                       horizontal: 'right',
@@ -191,7 +191,7 @@ function ResponsiveAppBar() {
                       vertical: 'top',
                       horizontal: 'right',
                     }}
-                    open={Boolean(anchorElCoursesDesktop)}
+                    open={Boolean(anchorElCursosDesktop)}
                     onClose={handleCloseCourseMenu}
                   >
                     {courseOptions.map((option) => (

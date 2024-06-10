@@ -15,7 +15,6 @@ const CourseCard = ({ course }) => {
 export default CourseCard;
 
 const Card = styled.div`
-    border: px solid #1B998B;
     border-radius: 10px;
     padding: 20px;
     margin: 20px;

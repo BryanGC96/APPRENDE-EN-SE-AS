@@ -13,20 +13,21 @@ const Home = () => {
 export default Home;
 
 const HomeContainer = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-height: 80vh;
-text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    background-color: #f8f9fa;
 
-h1 {
-    font-size: 40px;
-    collor: #1C1D21;
-}
+    h1 {
+        font-size: 40px;
+        color: #1C1D21;
+    }
 
-p {
-    font-size: 20px;
-    color: #1C1D21;
-}
+    p {
+        font-size: 20px;
+        color: #1C1D21;
+    }
 `;

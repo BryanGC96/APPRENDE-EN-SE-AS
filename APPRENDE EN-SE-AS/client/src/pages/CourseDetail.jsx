@@ -21,6 +21,11 @@ const CourseDetail = () => {
 export default CourseDetail;
 
 const DetailContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
     padding: 2rem;
     text-align: center;
     background-color: #DECDF5;

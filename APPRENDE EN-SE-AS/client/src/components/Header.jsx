@@ -20,11 +20,13 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-  const [anchorElCourses, setAnchorElCourses] = React.useState(null); // State for nested menu
+  const [anchorElCoursesDesktop, setAnchorElCoursesDesktop] = React.useState(null); // Vista para Escritorio.
+  const [anchorElCoursesMobile, setAnchorElCoursesMobile] = React.useState(null); // Vista para mobil.
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
+
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
@@ -33,32 +35,36 @@ function ResponsiveAppBar() {
     setAnchorElNav(null);
   };
 
-  const handleOpenCoursesMenu = (event) => {
-    setAnchorElCourses(event.currentTarget);
+  const handleOpenCoursesDesktopMenu = (event) => {
+    setAnchorElCoursesDesktop(event.currentTarget);
   };
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
 
+  const handleOpenCoursesMobileMenu = (event) => {
+    setAnchorElCoursesMobile(event.currentTarget);
+  };
+
   const handleCloseCourseMenu = () => {
-    setAnchorElCourses(null);
+    setAnchorElCoursesDesktop(null);
+    setAnchorElCoursesMobile(null);
   };
 
   return (
     <AppBar position="fixed" sx={{ backgroundColor: '#1C1D21'}}>
       <Container maxWidth="x1"> {/* Distancia entre el texto y logo del Navbar */}
         <Toolbar disableGutters>
-          <SignLanguageIcon sx={{ display: { xs: 'none', md: 'flex' },fontSize: '3rem', mr: 1 }} /> {/**Icon cuando pantalla completa */}
+          <SignLanguageIcon sx={{ display: { xs: 'none', md: 'flex' }, fontSize: '3rem', mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
-            // component="a" // Lo hace un link..
             href="#app-bar-with-responsive-menu"
             sx={{
               mr: 2,
               ml: 2,
-              display: { xs: 'none', md: 'flex', fontSize:'1.60rem' },
+              display: { xs: 'none', md: 'flex', fontSize: '1.60rem' },
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
@@ -66,7 +72,7 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            App-rende En-señas {/**Titulo cuando pantalla completa */}
+            App-rende En-señas
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, justifyContent: 'flex-end', mr: 5 }}>
@@ -81,70 +87,66 @@ function ResponsiveAppBar() {
               <MenuIcon />
             </IconButton>
             <Menu
-  id="menu-appbar"
-  anchorEl={anchorElNav}
-  anchorOrigin={{
-    vertical: 'bottom',
-    horizontal: 'left',
-  }}
-  keepMounted
-  transformOrigin={{
-    vertical: 'top',
-    horizontal: 'left',
-  }}
-  open={Boolean(anchorElNav)}
-  onClose={handleCloseNavMenu}
-  sx={{
-    display: { xs: 'block', md: 'none' },
-  }}
->
-  {pages.map((page) => (
-    <div key={page}>
-      {page === 'Courses' ? (
-        <div>
-          <MenuItem
-            onMouseEnter={handleOpenCoursesMenu}
-            onMouseLeave={handleCloseCourseMenu}
-            onClick={handleCloseNavMenu}
-          >
-            <Typography textAlign="center">{page}</Typography>
-            {/** Navbar version mobile */}
-            <Menu
-              anchorEl={anchorElCourses}
+              id="menu-appbar"
+              anchorEl={anchorElNav}
               anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
+                vertical: 'bottom',
+                horizontal: 'left',
               }}
               keepMounted
               transformOrigin={{
                 vertical: 'top',
-                horizontal: 'right',
+                horizontal: 'left',
               }}
-              open={Boolean(anchorElCourses)}
-              onClose={handleCloseCourseMenu}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                display: { xs: 'block', md: 'none' },
+              }}
             >
-              {courseOptions.map((option) => (
-                <MenuItem key={option} onClick={handleCloseCourseMenu}>
-                  {option}
-                </MenuItem>
+              {pages.map((page) => (
+                <div key={page}>
+                  {page === 'Courses' ? (
+                    <div>
+                      <MenuItem
+                        onClick={handleOpenCoursesMobileMenu}
+                      >
+                        <Typography textAlign="center">{page}</Typography>
+                      </MenuItem>
+                      <Menu
+                        anchorEl={anchorElCoursesMobile}
+                        anchorOrigin={{
+                          vertical: 'top',
+                          horizontal: 'right',
+                        }}
+                        keepMounted
+                        transformOrigin={{
+                          vertical: 'top',
+                          horizontal: 'right',
+                        }}
+                        open={Boolean(anchorElCoursesMobile)}
+                        onClose={handleCloseCourseMenu}
+                      >
+                        {courseOptions.map((option) => (
+                          <MenuItem key={option} onClick={handleCloseCourseMenu}>
+                            {option}
+                          </MenuItem>
+                        ))}
+                      </Menu>
+                    </div>
+                  ) : (
+                    <MenuItem key={page} onClick={handleCloseNavMenu}>
+                      <Typography textAlign="center">{page}</Typography>
+                    </MenuItem>
+                  )}
+                </div>
               ))}
             </Menu>
-          </MenuItem>
-        </div>
-      ) : (
-        <MenuItem key={page} onClick={handleCloseNavMenu}>
-          <Typography textAlign="center">{page}</Typography>
-        </MenuItem>
-      )}
-    </div>
-  ))}
-</Menu>
           </Box>
-          <SignLanguageIcon sx={{ display: { xs: 'flex', md: 'none' },fontSize: '3rem', mr: 1 }} />
+          <SignLanguageIcon sx={{ display: { xs: 'flex', md: 'none' }, fontSize: '3rem', mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
-            // component="a" // Lo hace un link..
             href="#app-bar-with-responsive-menu"
             sx={{
               mr: 2,
@@ -159,12 +161,12 @@ function ResponsiveAppBar() {
           >
             App-rende En-señas
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}> {/**Box Encargada de el texto de 'pages' */}
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
             {pages.map((page) => (
               <div key={page}>
                 {page === 'Courses' ? (
                   <Button
-                    onClick={handleOpenCoursesMenu}
+                    onClick={handleOpenCoursesDesktopMenu}
                     sx={{ my: 4, mr: 4, color: '#F8F1FF', display: 'block' }}
                   >
                     {page}
@@ -179,7 +181,7 @@ function ResponsiveAppBar() {
                 )}
                 {page === 'Courses' && (
                   <Menu
-                    anchorEl={anchorElCourses}
+                    anchorEl={anchorElCoursesDesktop}
                     anchorOrigin={{
                       vertical: 'top',
                       horizontal: 'right',
@@ -189,7 +191,7 @@ function ResponsiveAppBar() {
                       vertical: 'top',
                       horizontal: 'right',
                     }}
-                    open={Boolean(anchorElCourses)}
+                    open={Boolean(anchorElCoursesDesktop)}
                     onClose={handleCloseCourseMenu}
                   >
                     {courseOptions.map((option) => (
@@ -205,11 +207,11 @@ function ResponsiveAppBar() {
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
-                <Box>
-                    <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                        <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-                    </IconButton> {/** Es la parte de el logo de la derecha! */}
-                </Box>
+              <Box>
+                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                  <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                </IconButton>
+              </Box>
             </Tooltip>
             <Menu
               sx={{ mt: '45px' }}

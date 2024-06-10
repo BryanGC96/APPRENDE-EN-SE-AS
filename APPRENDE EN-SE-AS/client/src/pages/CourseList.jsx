@@ -4,9 +4,9 @@ import CourseCard from '../components/CourseCard';
 
 const CourseList = () => {
     const courses = [
-        { id: 1, title: 'Course 1', description: 'Course 1 description'},
-        { id: 2, title: 'Course 2', description: 'Course 2 description'},
-        { id: 3, title: 'Course 3', description: 'Course 3 description'},
+        { id: 1, title: '¡Aprende a codificar HTML súper rápido! 🚀', description: 'Primera parte del curso de HTML', videoUrl: 'https://www.youtube.com/embed/vc6b2IqYMKQ'},
+        { id: 2, title: '¡Aprende a codificar HTML súper rápido! 🚀 Parte 2', description: 'Segunda parte del curso de HTML', videoUrl: 'https://www.youtube.com/embed/IgrobRiJfjw'},
+        { id: 3, title: '¿Qué es el lenguaje de programación Java? en LSM', description: 'Introducción al lenguaje de programación Java', videoUrl: 'https://www.youtube.com/embed/KQj2uHZq_Tg'},
     ];
 
     return (

@@ -1,19 +1,27 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 
 const CourseDetail = () => {
     const { id } = useParams();
-    const course = { id, title: 'Course ' + id, description: 'Description of course ' + id };
+    const location = useLocation();
+    const { title, description, videoUrl } = location.state || { title: '', description: '', videoUrl: '' };
 
     return (
         <DetailContainer>
-            <h2> {course.title} </h2>
-            <p> {course.description} </p>
-            <Video controls>
-                <source src="https://www.youtube.com/watch?v=dQw4w9WgXcQ" type="video/mp4" />
-                Your browser does not support the video tag.
-            </Video>
+            <h2> {title} </h2>
+            <p> {description} </p>
+            <VideoWrapper>
+                <iframe
+                width="100%"
+                height="100%"
+                src={videoUrl}
+                title={title}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                ></iframe>
+            </VideoWrapper>
         </DetailContainer>
     );
 };
@@ -39,7 +47,7 @@ const DetailContainer = styled.div`
     }
 `;
 
-const Video = styled.video`
+const VideoWrapper = styled.video`
     width: 100%;
     max-width: 600px;
     height: auto;

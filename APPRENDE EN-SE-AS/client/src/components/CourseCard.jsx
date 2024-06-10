@@ -7,7 +7,7 @@ const CourseCard = ({ course }) => {
         <Card>
             <h3> {course.title} </h3>
             <p> {course.description} </p>
-            <Link to={`/course/${course.id}`}> Ver Curso </Link>
+            <Link to={`/courses/${course.id}`} state={{ title: course.title, description: course.description, videoUrl: course.videoUrl }} > Ver Curso </Link>
         </Card>
     );
 };

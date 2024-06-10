@@ -12,6 +12,8 @@ function App() {
         <ResponsiveAppBar /> {/**Navbar */}
         <main className='content'>
           {/* <Route path='/' element={</>} /> */}
+          {/* <Route path='/' element={</>} /> */}
+          {/* <Route path='/' element={</>} /> */}
         </main>
         <Footer />
       </div>

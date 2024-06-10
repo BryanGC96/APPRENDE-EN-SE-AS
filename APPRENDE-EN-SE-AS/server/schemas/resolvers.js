@@ -1,4 +1,4 @@
-const { User } = require("../models");
+const { User, Course } = require("../models");
 const { singToken, AuthenticationError, signToken } = require("../utils/auth");
 
 const resolvers = {
@@ -8,6 +8,12 @@ const resolvers = {
     },
     user: async (parent, { userID }) => {
       return User.findOne({ _id: userID });
+    },
+    courses: async () => {
+      return Course.find();
+    },
+    course: async (parent, { courseId }) => {
+      return Course.findOne({ _id: courseId });
     },
     me: async (parent, args, context) => {
       if (context.user) {
@@ -37,6 +43,13 @@ const resolvers = {
       }
       const token = signToken(user);
       return { token, user };
+    },
+    addCourse: async (parent, { title, description }) => {
+      const course = await Course.create({
+        title,
+        description,
+      });
+      return course;
     },
   },
 };

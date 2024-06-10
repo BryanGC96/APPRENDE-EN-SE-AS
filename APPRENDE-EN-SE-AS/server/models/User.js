@@ -10,6 +10,7 @@ const userSchema = new Schema({
     match: [/.+@.+\..+/, "Must match an email address!"],
   },
   password: { type: String, required: true },
+  courses: [{ type: Schema.Types.ObjectId, ref: "Course" }],
 });
 
 userSchema.pre("save", async function (next) {

@@ -1,5 +1,5 @@
 import React from 'react';
-import stylñed from 'styled-components';
+import styled from 'styled-components';
 import CourseCard from '../components/CourseCard';
 
 const CourseList = () => {

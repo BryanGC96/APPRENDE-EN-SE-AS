@@ -1,0 +1,72 @@
+[
+  {
+    "user_id": "60d21b4667d0d8992e610c85",
+    "username": "trying_users",
+    "email": "learner1@example.com",
+    "password": "password123",
+    "courses": []
+  },
+  {
+    "user_id": "60d21b4667d0d8992e610c86",
+    "username": "learner2",
+    "email": "learner2@example.com",
+    "password": "password123",
+    "courses": []
+  },
+  {
+    "user_id": "60d21b4667d0d8992e610c87",
+    "username": "learner3",
+    "email": "learner3@example.com",
+    "password": "password123",
+    "courses": []
+  },
+  {
+    "user_id": "60d21b4667d0d8992e610c88",
+    "username": "learner4",
+    "email": "learner4@example.com",
+    "password": "password123",
+    "courses": []
+  },
+  {
+    "user_id": "60d21b4667d0d8992e610c89",
+    "username": "learner5",
+    "email": "learner5@example.com",
+    "password": "password123",
+    "courses": []
+  },
+  {
+    "user_id": "60d21b4667d0d8992e610c8a",
+    "username": "learner6",
+    "email": "learner6@example.com",
+    "password": "password123",
+    "courses": []
+  },
+  {
+    "user_id": "60d21b4667d0d8992e610c8b",
+    "username": "learner7",
+    "email": "learner7@example.com",
+    "password": "password123",
+    "courses": []
+  },
+  {
+    "user_id": "60d21b4667d0d8992e610c8c",
+    "username": "learner8",
+    "email": "learner8@example.com",
+    "password": "password123",
+    "courses": []
+  },
+  {
+    "user_id": "60d21b4667d0d8992e610c8d",
+    "username": "learner9",
+    "email": "learner9@example.com",
+    "password": "password123",
+    "courses": []
+  },
+  {
+    "user_id": "60d21b4667d0d8992e610c8e",
+    "username": "learner10",
+    "email": "learner10@example.com",
+    "password": "password123",
+    "courses": []
+  }
+]

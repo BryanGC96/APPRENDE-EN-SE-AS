@@ -1,0 +1,14 @@
+[
+  {
+    "admin_id": "60d21b4667d0d8992e610c88",
+    "username": "admin1",
+    "email": "admin1@example.com",
+    "password": "adminpassword123"
+  },
+  {
+    "admin_id": "60d21b4667d0d8992e610c89",
+    "username": "is_this_working?",
+    "email": "admin2@example.com",
+    "password": "adminpassword123"
+  }
+]

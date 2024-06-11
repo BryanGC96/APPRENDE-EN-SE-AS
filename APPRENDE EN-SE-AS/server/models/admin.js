@@ -2,15 +2,13 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
-const studentSchema = new Schema({
-    student_ID: {
-        type: Number,
-        required: true,
-        trim: true
-    },
+const adminSchema = new Schema({
+    admin_id: { type: Schema.Types.ObjectId, required: true, unique: true },     
+          
     username: {
         type: String,
         required: true,
+        unique:true,
         trim: true
     },
     email: {
@@ -25,8 +23,9 @@ const studentSchema = new Schema({
         minlength: 5
     }
 });
-const student = mongoose.model('student', studentSchema);
-module.exports = student;
 
 
+const Admin = mongoose.model('Admin', adminSchema);
+module.exports = Admin;
 //HAS
+//export

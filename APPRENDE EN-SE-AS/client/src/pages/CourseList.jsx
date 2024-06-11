@@ -13,7 +13,7 @@ const CourseList = () => {
         <CourseListContainer>
             {courses.map((course) => (
                 <CourseCard key={course.id} course={course} />
-            ))};
+            ))}
         </CourseListContainer>
     );
 };

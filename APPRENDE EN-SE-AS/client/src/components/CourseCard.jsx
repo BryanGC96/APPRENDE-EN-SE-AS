@@ -20,7 +20,7 @@ const Card = styled.div`
     margin: 20px;
     width: 300px;
     text-align: center;
-    background-color: #DECDF5;
+    background-color: #F8F1FF;
 
     h3 {
         color: #1C1D21;

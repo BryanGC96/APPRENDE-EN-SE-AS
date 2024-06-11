@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Home = () => {
     return (
         <HomeContainer>
-            <h1> Bienvenido a APPrende EnSeñas </h1>
+            <h1> Bienvenido a App-rende En-señas </h1>
             <p> La primera plataforma de cursos en línea sobre LSM </p>
         </HomeContainer>
     );
@@ -27,6 +27,7 @@ const HomeContainer = styled.div`
     }
 
     p {
+        margin: 20px;
         font-size: 20px;
         color: #1C1D21;
     }

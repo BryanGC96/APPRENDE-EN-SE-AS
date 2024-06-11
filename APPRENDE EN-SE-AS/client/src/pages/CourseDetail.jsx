@@ -40,10 +40,12 @@ const DetailContainer = styled.div`
     
     h2 {
         margin-bottom: 1rem;
+        color: #1C1D21;
     }
 
     p {
         margin-bottom: 2rem;
+        color: #1C1D21;
     }
 `;
 

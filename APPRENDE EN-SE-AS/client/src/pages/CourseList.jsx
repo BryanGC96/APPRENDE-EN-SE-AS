@@ -13,7 +13,7 @@ const CourseList = () => {
         <CourseListContainer>
             {courses.map((course) => (
                 <CourseCard key={course.id} course={course} />
-            ))}
+            ))};
         </CourseListContainer>
     );
 };
@@ -27,5 +27,5 @@ const CourseListContainer = styled.div`
     align-items: center;
     height: 100vh;
     padding: 20px;
-    margin: 20px;
+    background-color: #DECDF5;
 `;

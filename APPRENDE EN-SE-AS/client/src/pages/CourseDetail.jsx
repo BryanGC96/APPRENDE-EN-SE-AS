@@ -49,6 +49,6 @@ const DetailContainer = styled.div`
 
 const VideoWrapper = styled.video`
     width: 100%;
-    max-width: 600px;
+    max-width: 800px;
     height: auto;
 `;

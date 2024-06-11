@@ -19,7 +19,7 @@ const HomeContainer = styled.div`
     justify-content: center;
     height: 100vh;
     text-align: center;
-    background-color: #f8f9fa;
+    background-color: #DECDF5;
 
     h1 {
         font-size: 40px;

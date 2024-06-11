@@ -14,7 +14,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import SignLanguageIcon from '@mui/icons-material/SignLanguage';
 
-const courseOptions = ['Saludos', 'Números', 'Colores', 'Animales'];
+const courseOptions = ['Todos','Saludos', 'Números', 'Colores', 'Animales'];
 const pages = ['Inicio', 'Cursos', 'Iniciar Sesión', 'Crear Cuenta', 'Nosotros'];
 const settings = ['Perfil', 'Cuenta', 'Panel', 'Cerrar Sesión'];
 

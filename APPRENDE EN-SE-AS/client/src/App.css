@@ -12,6 +12,9 @@
 
 .content {
   flex: 1;
+  padding-top: 8%; /* Ajustar dependiendo del NavBar */
+  padding-bottom: 8%; /* Ajustar dependiendo del Footer */
+  margin-left: 2%;
 }
 
 footer {

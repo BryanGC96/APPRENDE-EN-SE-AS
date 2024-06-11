@@ -9,6 +9,7 @@ import CourseDetail from './pages/CourseDetail';
 import Home from './pages/Home'
 
 
+
 function App() {
   return (
     <Router>

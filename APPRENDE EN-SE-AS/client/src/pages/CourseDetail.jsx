@@ -5,23 +5,25 @@ import { useLocation, useParams } from 'react-router-dom';
 const CourseDetail = () => {
     const { id } = useParams();
     const location = useLocation();
-    const { title, description, videoUrl } = location.state || { title: '', description: '', videoUrl: '' };
+    const { title, description, videoId } = location.state || { title: '', description: '', videoId: '' };
+
+    console.log(videoId);
+    console.log(title);
+    
 
     return (
         <DetailContainer>
             <h2> {title} </h2>
             <p> {description} </p>
-            <VideoWrapper>
-                <iframe
-                width="100%"
-                height="100%"
-                src={videoUrl}
-                title={title}
-                frameBorder="0"
+            <iframe
+                width="560"
+                height="300"
+                src={videoId}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
-                ></iframe>
-            </VideoWrapper>
+                title="youtube video"
+            />
+            
         </DetailContainer>
     );
 };
@@ -51,6 +53,6 @@ const DetailContainer = styled.div`
 
 const VideoWrapper = styled.video`
     width: 100%;
-    max-width: 800px;
-    height: auto;
+    /* max-width: 800px; */
+    aspect-ratio: 1/1; 
 `;

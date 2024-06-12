@@ -1,7 +1,13 @@
+/* #root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+} */
 #root {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 .app-container {
@@ -14,8 +20,7 @@
   flex: 1;
   padding-top: 15%; /* Ajustar dependiendo del NavBar */
   padding-bottom: 15%; /* Ajustar dependiendo del Footer */
-  margin-left: auto; /* Centra el contenido horizontalmente */
-  margin-right: auto; /* Centra el contenido horizontalmente */
+  margin: 0 auto; /* Centra el contenido Horizontalmente*/
   max-width: 90%;
 }
 
@@ -33,7 +38,7 @@
   font-size: 1rem;
   background-color: black;
   justify-content: center;
-  width: 150%; /* Adjust the width as needed */
+  width: 100%; /* Adjust the width as needed */
   margin: 0 auto; /* Center the container horizontally */
   padding: 20px; /* Add padding if necessary */
   box-sizing: border-box; /* Include padding and border in the width calculation */
@@ -41,10 +46,12 @@
 
 
 .aboutUsAvatarsContainers {
+  display: flex;
   justify-content: center;
-  margin-left: 5%;
-  margin-right: 5%;
-  background-color: aqua;
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  padding: 20px; /* Add padding if necessary */
+  box-sizing: border-box; /* Include padding and border in the width calculation */
+  background-color: aquamarine;
 }
 
 footer {

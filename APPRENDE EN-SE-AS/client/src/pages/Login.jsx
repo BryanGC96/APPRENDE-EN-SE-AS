@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { Container, TextField, Button, Box, Typography } from '@mui/material';
 import { styled } from '@mui/system';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -35,6 +38,10 @@ const Login = () => {
     } catch (error) {
       setError('An error occurred. Please try again.');
     }
+  };
+
+  const handleCreateAccountClick = () => {
+    navigate('/signup');
   };
 
   return (
@@ -78,7 +85,12 @@ const Login = () => {
             </StyledButton>
             <p id='aunNoCuenta'>¿Aún no tienes cuenta?</p>
             <ButtonContainer>
-              <StyledCreateAccountButton id="createAccountBttn" variant="contained" color="primary" fullWidth>
+              <StyledCreateAccountButton 
+              id="createAccountBttn" 
+              variant="contained" 
+              color="primary"
+              onClick={handleCreateAccountClick}
+              >
                 Crear Cuenta
               </StyledCreateAccountButton>
             </ButtonContainer>

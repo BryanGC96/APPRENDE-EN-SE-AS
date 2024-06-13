@@ -3,24 +3,68 @@ import { Container, TextField, Button, Box, Typography } from '@mui/material';
 import { styled } from '@mui/system';
 
 const Signup = () => {
+    const [ username, setUsername ] = useState('');
     const [ email, setEmail ] = useState('');
     const [ password, setPassword ] = useState('');
     const [ confirmPassword, setConfirmPassword ] = useState('');
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Lógica de signup
+        setError('');
+        setSuccess('');
+
+        if (password !== confirmPassword) {
+            setError('Wrong password! Try again.');
+            return;
+        }
+
+        try {
+            const response = await fetch('https://your-backend-api.com/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application /json',
+                }, body: JSON.stringify({
+                    username,
+                    email,
+                    password,
+                  }),
+              });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSuccess('Signup successful! Please log in.');
+        setUsername('');
+        setEmail('');
+        setPassword('');
+        setConfirmPassword('');
+      } else {
+        setError(data.message || 'Signup failed. Please try again.');
+      }
+    } catch (error) {
+      setError('An error occurred. Please try again.');
+    }
     };
 
     return ( 
+        <OuterContainer>
         <StyledContainer>
       <Typography variant="h4" gutterBottom>
-        Signup
+        Crear cuenta
       </Typography>
       <form onSubmit={handleSubmit}>
+      <StyledTextField
+          label="Nombre de usuario"
+          type="Username"
+          variant="outlined"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          fullWidth
+          margin="normal"
+        />
         <StyledTextField
-          label="Email"
-          type="email"
+          label="Correo electrónico"
+          type="Email"
           variant="outlined"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -28,8 +72,8 @@ const Signup = () => {
           margin="normal"
         />
         <StyledTextField
-          label="Password"
-          type="password"
+          label="Contraseña"
+          type="Password"
           variant="outlined"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -37,7 +81,7 @@ const Signup = () => {
           margin="normal"
         />
         <StyledTextField
-          label="Confirm Password"
+          label="Confirmar contraseña"
           type="password"
           variant="outlined"
           value={confirmPassword}
@@ -47,18 +91,26 @@ const Signup = () => {
         />
         <Box mt={2}>
           <StyledButton type="submit" variant="contained" color="primary" fullWidth>
-            Signup
+            Crear cuenta
           </StyledButton>
         </Box>
       </form>
     </StyledContainer>
+    </OuterContainer>
   );
 };
 
 export default Signup;
 
+const OuterContainer = styled(Container)({
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100vh',
+  });
+
 const StyledContainer = styled(Container)({
-    backgroundColor: '#DECDF5',
+    backgroundColor: '#F8F1FF',
     padding: '2rem',
     borderRadius: '8px',
     boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',

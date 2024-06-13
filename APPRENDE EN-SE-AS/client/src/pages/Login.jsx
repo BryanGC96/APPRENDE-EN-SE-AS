@@ -3,22 +3,61 @@ import { Container, TextField, Button, Box, Typography } from '@mui/material';
 import { styled } from '@mui/system';
 
 const Login = () => {
+    const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Lógica de login
+    setError('');
+
+    try {
+      const response = await fetch('https://your-backend-api.com/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+
+        localStorage.setItem('token', data.token);
+
+        window.location.href = '/';
+      } else {
+        setError(data.message || 'Login failed. Please try again.');
+      }
+    } catch (error) {
+      setError('An error occurred. Please try again.');
+    }
   };
 
   return (
+    <OuterContainer>
     <StyledContainer>
       <Typography variant="h4" gutterBottom>
-        Login
+        Iniciar sesión
       </Typography>
+      {error && <Typography color="error">{error}</Typography>}
       <form onSubmit={handleSubmit}>
+      <StyledTextField
+          label="Nombre de usuario"
+          type="username"
+          variant="outlined"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          fullWidth
+          margin="normal"
+        />
         <StyledTextField
-          label="Email"
+          label="Correo electrónico"
           type="email"
           variant="outlined"
           value={email}
@@ -27,7 +66,7 @@ const Login = () => {
           margin="normal"
         />
         <StyledTextField
-          label="Password"
+          label="Contraseña"
           type="password"
           variant="outlined"
           value={password}
@@ -37,18 +76,26 @@ const Login = () => {
         />
         <Box mt={2}>
           <StyledButton type="submit" variant="contained" color="primary" fullWidth>
-            Login
+            Iniciar 
           </StyledButton>
         </Box>
       </form>
     </StyledContainer>
+    </OuterContainer>
   );
 };
 
 export default Login;
 
+const OuterContainer = styled(Container)({
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100vh',
+  });
+
 const StyledContainer = styled(Container)({
-  backgroundColor: '#DECDF5',
+  backgroundColor: '#F8F1FF',
   padding: '2rem',
   borderRadius: '8px',
   boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',

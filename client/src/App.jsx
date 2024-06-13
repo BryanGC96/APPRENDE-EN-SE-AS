@@ -10,7 +10,7 @@ import Home from './pages/Home'
 import Signup from './pages/Signup'
 import Login from './pages/Login';
 import { ThemeProvider, CssBaseline } from '@mui/material';
-import theme from '../src/theme';
+import theme from './theme';
 
 
 

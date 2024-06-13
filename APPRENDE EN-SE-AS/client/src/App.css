@@ -1,7 +1,13 @@
-#root {
+/* #root {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+} */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 .app-container {
@@ -12,6 +18,50 @@
 
 .content {
   flex: 1;
+  padding-top: 15%; /* Ajustar dependiendo del NavBar */
+  padding-bottom: 15%; /* Ajustar dependiendo del Footer */
+  margin: 0 auto; /* Centra el contenido Horizontalmente*/
+  max-width: 90%;
+}
+
+/* Ajusta la vista para pantallas pequeñas */
+@media (max-width: 768px) {
+  .content {
+    padding-top: 15%; 
+    padding-bottom: 15%; 
+    max-width: 90%; 
+  }
+}
+
+.aboutUsContentBox {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align: center;
+  font-size: 1rem;
+  /* background-color: black; */
+  justify-content: center;
+  width: 100%; 
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  box-sizing: border-box; /* Especifica como sera modificado el width y height */
+}
+
+
+.aboutUsAvatarsContainers {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  box-sizing: border-box; /* Especifica como sera modificado el width y height */
+  /* background-color: aquamarine; */
+}
+
+#tituloEquipo {
+  margin-bottom: 2%;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 100;
+}
+
+#descriptionDelProyecto {
+  margin-top: 5%;
 }
 
 footer {

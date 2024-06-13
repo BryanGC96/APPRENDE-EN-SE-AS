@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useNavigate } from 'react-router-dom'; // Permire las conexiones entre componentes.
+import { useNavigate } from 'react-router-dom'; // Permite las conexiones entre componentes.
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -30,10 +30,6 @@ function ResponsiveAppBar() {
     setAnchorElNav(event.currentTarget);
   };
 
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
@@ -57,11 +53,32 @@ function ResponsiveAppBar() {
 
   const handlePageClick = (page) => {
     handleCloseNavMenu();
-    if (page === 'Nosotros') {
-      navigate('/aboutUs');
+  
+    const routes = {
+      'Inicio': '/',
+      'Iniciar Sesión': '/login',
+      'Crear Cuenta': '/signup',
+      'Nosotros': '/aboutUs',
+       // AQUI PODEMOS AGREGAR MAS LINKS A LOS COMPONENTES DE LA PAGINA
+    };
+  
+    const route = routes[page];
+    if (route) {
+      navigate(route);
     }
-    // AQUI PODEMOS AGREGAR MAS LINKS A LOS COMPONENTES DE LA PAGINA
   };
+  
+  const handleCourseOptionClick = (option) => {
+    handleCloseCourseMenu();
+
+    if (option === 'Todos') {
+      navigate('/courses');
+    } else {
+      // Aqui podemos agregar mas Opciones dentro de el navbar de courses.
+      console.log(`Selected course option: ${option}`);
+    }
+  };
+  
 
   return (
     <AppBar position="fixed" sx={{ backgroundColor: '#1C1D21'}}>
@@ -139,7 +156,7 @@ function ResponsiveAppBar() {
                         onClose={handleCloseCourseMenu}
                       >
                         {courseOptions.map((option) => (
-                          <MenuItem key={option} onClick={handleCloseCourseMenu}>
+                          <MenuItem key={option} onClick={() => handleCourseOptionClick(option)}>
                             {option}
                           </MenuItem>
                         ))}
@@ -205,11 +222,11 @@ function ResponsiveAppBar() {
                     open={Boolean(anchorElCursosDesktop)}
                     onClose={handleCloseCourseMenu}
                   >
-                    {courseOptions.map((option) => (
-                      <MenuItem key={option} onClick={handleCloseCourseMenu}>
-                        {option}
-                      </MenuItem>
-                    ))}
+                   {courseOptions.map((option) => (
+                    <MenuItem key={option} onClick={() => handleCourseOptionClick(option)}>
+                      {option}
+                    </MenuItem>
+                  ))}
                   </Menu>
                 )}
               </div>

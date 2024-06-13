@@ -23,7 +23,7 @@ function AboutUs() {
 
   return (
     <div className="aboutUsContentBox">
-      <h1 id='tituloEquipo'>Equipo de Desarrolladores</h1>
+      {/* <h1 id='tituloEquipo'>Equipo de Desarrolladores</h1> */}
       <Stack className="aboutUsAvatarsContainers" direction="row" spacing={25} justifyContent="center">
         {teamMembers.map((member, index) => (
           <Grow
@@ -34,7 +34,7 @@ function AboutUs() {
           >
             <Box textAlign="center" sx={{ marginRight: 2 }}>
               <Avatar alt={`Imagen de perfil ${member.name}`} src={member.src} sx={{ width: 250, height: 250, marginBottom: 1 }} />
-              <Typography variant="h5" sx={{ color: '#1C1D21', fontWeight: '600' }}>{member.name}</Typography>
+              <Typography variant="h4" sx={{ color: '#1C1D21', fontWeight: '600' }}>{member.name}</Typography>
               <Typography variant="body2" sx={{ color: '#1C1D21' }}>{member.bio}</Typography>
               <Link href={member.link} sx={{ color: '#1B998B' }}>GitHub Profile</Link>
             </Box>

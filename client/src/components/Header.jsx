@@ -15,7 +15,7 @@ import MenuItem from '@mui/material/MenuItem';
 import SignLanguageIcon from '@mui/icons-material/SignLanguage';
 
 const courseOptions = ['Todos','Saludos', 'Números', 'Colores', 'Animales'];
-const pages = ['Inicio', 'Cursos', 'Iniciar Sesión', 'Crear Cuenta', 'Nosotros'];
+const pages = ['Inicio', 'Cursos', 'Iniciar Sesión','Nosotros'];
 const settings = ['Perfil', 'Cuenta', 'Panel', 'Cerrar Sesión'];
 
 function ResponsiveAppBar() {
@@ -57,7 +57,6 @@ function ResponsiveAppBar() {
     const routes = {
       'Inicio': '/',
       'Iniciar Sesión': '/login',
-      'Crear Cuenta': '/signup',
       'Nosotros': '/aboutUs',
        // AQUI PODEMOS AGREGAR MAS LINKS A LOS COMPONENTES DE LA PAGINA
     };

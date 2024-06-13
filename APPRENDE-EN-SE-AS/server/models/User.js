@@ -2,15 +2,31 @@ const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
 
 const userSchema = new Schema({
-  username: { type: String, required: true, unique: true },
+  username: {
+    type: String,
+    required: true,
+    unique: true,
+  },
   email: {
     type: String,
     required: true,
     unique: true,
     match: [/.+@.+\..+/, "Must match an email address!"],
   },
-  password: { type: String, required: true },
-  courses: [{ type: Schema.Types.ObjectId, ref: "Course" }],
+  password: {
+    type: String,
+    required: true,
+  },
+  courses: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Course",
+    },
+  ],
+  isAdmin: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 userSchema.pre("save", async function (next) {

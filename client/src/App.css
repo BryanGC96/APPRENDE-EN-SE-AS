@@ -22,8 +22,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 15%; /* Ajustar dependiendo del NavBar */
-  padding-bottom: 15%; /* Ajustar dependiendo del Footer */
+   /* Ajustar dependiendo del Footer */
   margin: 0 auto; /* Centra el contenido Horizontalmente*/
   max-width: 90%;
 }

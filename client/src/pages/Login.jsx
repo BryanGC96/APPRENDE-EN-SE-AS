@@ -107,7 +107,8 @@ const OuterContainer = styled(Container)({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  height: '100%', /* Ajusta el contenedor para ocupar todo el ancho */
+  height: 'auto',
+  width: '100%',
   backgroundcolor: '#DECDF5'
 });
 

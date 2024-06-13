@@ -60,6 +60,13 @@ function ResponsiveAppBar() {
     if (page === 'Nosotros') {
       navigate('/aboutUs');
     }
+    if (page === 'Iniciar Sesión') {
+      navigate('/login');
+    }
+    if (page === 'Cursos') {
+      navigate('/courses');
+    }
+    
     // AQUI PODEMOS AGREGAR MAS LINKS A LOS COMPONENTES DE LA PAGINA
   };
 

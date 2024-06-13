@@ -50,9 +50,3 @@ const DetailContainer = styled.div`
         color: #1C1D21;
     }
 `;
-
-const VideoWrapper = styled.video`
-    width: 100%;
-    /* max-width: 800px; */
-    aspect-ratio: 1/1; 
-`;

@@ -12,7 +12,7 @@ type Course {
     title: String
     description: String
     video_url: String
-    studentEnrolled: String
+    subscriber: [User]!
 }
 
 type Auth {
@@ -32,6 +32,7 @@ type Mutation {
     addUser (username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     addCourse(title: String!, description: String!): Course
+    
 
 }
 

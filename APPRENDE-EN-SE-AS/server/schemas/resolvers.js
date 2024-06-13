@@ -1,3 +1,4 @@
+const { subscribe } = require("graphql");
 const { User, Course } = require("../models");
 const { singToken, AuthenticationError, signToken } = require("../utils/auth");
 
@@ -44,13 +45,16 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    addCourse: async (parent, { title, description }) => {
-      const course = await Course.create({
-        title,
-        description,
-      });
-      return course;
+    addCourse: async (parent, args, context) => {
+      //  FOR FUTRE DEVELOPMENT **ADMIN ONLY**
+      if (context.user.isAdmin) {
+        const courseData = await Course.create(args);
+
+        return courseData;
+      }
+      throw AuthenticationError;
     },
+    addSubscriber: async (parent, {}) => {},
   },
 };
 module.exports = resolvers;

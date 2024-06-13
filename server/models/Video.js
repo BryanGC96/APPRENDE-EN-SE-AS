@@ -13,6 +13,21 @@ const videoSchema = new Schema({
   category: {
     type: String,
   },
+  comments: [
+    {
+      commentText: {
+        type: String,
+        required: false,
+        minlength: 1,
+        maxlength: 280,
+      },
+      createdAt: {
+        type: Date,
+        default: Date.now,
+        get: (timestamp) => dateFormat(timestamp),
+      },
+    },
+  ],
 });
 
 const Video = model("Video", videoSchema);

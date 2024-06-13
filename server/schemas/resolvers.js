@@ -3,9 +3,9 @@ const { singToken, AuthenticationError, signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
-    // users: async () => {
-    //   return User.find();
-    // },
+    videos: async () => {
+      return Video.find();
+    },
     // user: async (parent, { userID }) => {
     //   return User.findOne({ _id: userID });
     // },
@@ -61,6 +61,18 @@ const resolvers = {
         return updatedUser;
       }
       throw AuthenticationError;
+    },
+    addComment: async (parent, { videoId, commentText }) => {
+      return Video.findOneAndUpdate(
+        { _id: videoId },
+        {
+          $addToSet: { comments: { commentText } },
+        },
+        {
+          new: true,
+          runValidators: true,
+        }
+      );
     },
   },
 };

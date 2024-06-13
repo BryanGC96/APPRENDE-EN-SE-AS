@@ -113,12 +113,6 @@ const videoSeeds = [
     video_url: "https://youtu.be/Noz54rVfSHM",
     category: "Numeros 1",
   },
-  {
-    title: "Numero 10",
-    description: "Learn the sign for '10' in sign language.",
-    video_url: "https://youtu.be/Noz54rVfSHM",
-    category: "Numeros 1",
-  },
 ];
 
 module.exports = videoSeeds;

@@ -130,7 +130,7 @@ const StyledButton = styled(Button)({
 
 // Boton para crear cuenta.
 const StyledCreateAccountButton = styled(Button)({
-  backgroundColor: '#e14747', // Change the color of the create account button
+  backgroundColor: '#1C1D21', // Change the color of the create account button
   color: '#F8F1FF',
   padding: '4px 8px',
   textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)',
@@ -139,7 +139,7 @@ const StyledCreateAccountButton = styled(Button)({
   width: '50%',
   marginTop: '10px', // Espacio entre los botones
   '&:hover': {
-    backgroundColor: '#db2424', // Color secundario al hacer hoover.
+    backgroundColor: '#2f3137', // Color secundario al hacer hoover.
   },
 });
 

@@ -34,14 +34,14 @@
 }
 
 .aboutUsContentBox {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   text-align: center;
   font-size: 1rem;
-  background-color: black;
+  /* background-color: black; */
   justify-content: center;
-  width: 100%; /* Adjust the width as needed */
-  margin: 0 auto; /* Center the container horizontally */
-  padding: 20px; /* Add padding if necessary */
-  box-sizing: border-box; /* Include padding and border in the width calculation */
+  width: 100%; 
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  box-sizing: border-box; /* Especifica como sera modificado el width y height */
 }
 
 
@@ -49,9 +49,19 @@
   display: flex;
   justify-content: center;
   margin: 0 auto; /* Centra el contenedor horizontalmente */
-  padding: 20px; /* Add padding if necessary */
-  box-sizing: border-box; /* Include padding and border in the width calculation */
-  background-color: aquamarine;
+  box-sizing: border-box; /* Especifica como sera modificado el width y height */
+  /* background-color: aquamarine; */
+}
+
+#tituloEquipo {
+  margin-bottom: 2%;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 100;
+}
+
+#descriptionDelProyecto {
+  margin-top: 5%;
 }
 
 footer {

@@ -14,16 +14,16 @@ function AboutUs() {
   }, []);
 
   const teamMembers = [
-    { name: 'Emilio', src: '/src/assets/Emilio.png', bio: 'Full Stack Developer', link: '#' },
-    { name: 'Fernando', src: '/src/assets/Fernando.png', bio: 'UI/UX Designer', link: '#' },
-    { name: 'Carlos', src: '/src/assets/Carlos.png', bio: 'Backend Developer', link: '#' },
-    { name: 'Bryan', src: '/src/assets/Bryan.png', bio: 'Project Manager', link: '#' },
-    { name: 'Poncho', src: '/src/assets/Poncho.png', bio: 'Data Scientist', link: '#' },
+    { name: 'Emilio', src: '/src/assets/Emilio.png', bio: 'Front_end Developer', link: '#' },
+    { name: 'Fernando', src: '/src/assets/Fernando.png', bio: 'Back_end Developer', link: '#' },
+    { name: 'Carlos', src: '/src/assets/Carlos.png', bio: 'Back_end Developer', link: '#' },
+    { name: 'Bryan', src: '/src/assets/Bryan.png', bio: 'Front_end Developer', link: '#' },
+    { name: 'Poncho', src: '/src/assets/Poncho.png', bio: 'Innovation & Back_end Developer', link: '#' },
   ];
 
   return (
     <div className="aboutUsContentBox">
-      <h1>Equipo</h1>
+      <h1 id='tituloEquipo'>Equipo de Desarrolladores</h1>
       <Stack className="aboutUsAvatarsContainers" direction="row" spacing={25} justifyContent="center">
         {teamMembers.map((member, index) => (
           <Grow
@@ -34,13 +34,14 @@ function AboutUs() {
           >
             <Box textAlign="center" sx={{ marginRight: 2 }}>
               <Avatar alt={`Imagen de perfil ${member.name}`} src={member.src} sx={{ width: 250, height: 250, marginBottom: 1 }} />
-              <Typography variant="h5" sx={{ color: '#1C1D21' }}>{member.name}</Typography>
+              <Typography variant="h5" sx={{ color: '#1C1D21', fontWeight: '600' }}>{member.name}</Typography>
               <Typography variant="body2" sx={{ color: '#1C1D21' }}>{member.bio}</Typography>
-              <Link href={member.link} sx={{ color: '#1B998B' }}>More Info</Link>
+              <Link href={member.link} sx={{ color: '#1B998B' }}>GitHub Profile</Link>
             </Box>
           </Grow>
         ))}
       </Stack>
+      <h4 id='descriptionDelProyecto'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione laboriosam quae, doloremque eos voluptates nihil voluptatibus rerum sequi quia, vel, laudantium iure tenetur labore quis quos non magni esse obcaecati?</h4>
     </div>
   );
 }

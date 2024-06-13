@@ -21,11 +21,12 @@ const CourseList = () => {
 export default CourseList;
 
 const CourseListContainer = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    padding: 20px;
-    background-color: #DECDF5;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+height: 100vh;
+padding: 20px;
+background-color: #DECDF5;
+height: 100%; /* Ajusta el contenedor para ocupar todo el ancho */
 `;

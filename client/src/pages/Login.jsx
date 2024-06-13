@@ -107,36 +107,41 @@ const OuterContainer = styled(Container)({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  height: '100vh',
+  height: '100%', /* Ajusta el contenedor para ocupar todo el ancho */
+  backgroundcolor: '#DECDF5'
 });
 
 const StyledContainer = styled(Container)({
-  backgroundColor: '#F8F1FF',
+  backgroundColor: '#FFFFFF',
   padding: '2rem',
   borderRadius: '8px',
   boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  width: '90%',
+  maxWidth: '500px',
+  height: '100%'
 });
 
 const StyledTextField = styled(TextField)({
   '& .MuiOutlinedInput-root': {
-    '& fieldset': {
-      borderColor: '#1B998B',
-    },
-    '&:hover fieldset': {
-      borderColor: '#1B998B',
-    },
-    '&.Mui-focused fieldset': {
-      borderColor: '#1B998B',
-    },
+      '& fieldset': {
+          borderColor: '#1B998B',
+      },
+      '&:hover fieldset': {
+          borderColor: '#1B998B',
+      },
+      '&.Mui-focused fieldset': {
+          borderColor: '#1B998B',
+      },
   },
 });
 
 const StyledButton = styled(Button)({
   backgroundColor: '#1B998B',
-  textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)',
-  fontSize: '16px', // Change the text size
   '&:hover': {
-    backgroundColor: '#167f6a',
+      backgroundColor: '#1B998B',
   },
 });
 

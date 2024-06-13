@@ -107,6 +107,7 @@ const OuterContainer = styled(Container)({
     justifyContent: 'center',
     alignItems: 'center',
     height: '100vh',
+    width: '100%',
   });
 
 const StyledContainer = styled(Container)({

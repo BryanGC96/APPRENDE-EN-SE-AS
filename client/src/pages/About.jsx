@@ -5,6 +5,7 @@ import Stack from '@mui/material/Stack';
 import Grow from '@mui/material/Grow';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
+import styled from 'styled-components';
 
 function AboutUs() {
   const [showAvatars, setShowAvatars] = React.useState(false);
@@ -22,8 +23,7 @@ function AboutUs() {
   ];
 
   return (
-    <div className="aboutUsContentBox">
-      {/* <h1 id='tituloEquipo'>Equipo de Desarrolladores</h1> */}
+    <AboutUsContainer>
       <Stack className="aboutUsAvatarsContainers" direction="row" spacing={25} justifyContent="center">
         {teamMembers.map((member, index) => (
           <Grow
@@ -42,8 +42,25 @@ function AboutUs() {
         ))}
       </Stack>
       <h4 id='descriptionDelProyecto'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione laboriosam quae, doloremque eos voluptates nihil voluptatibus rerum sequi quia, vel, laudantium iure tenetur labore quis quos non magni esse obcaecati?</h4>
-    </div>
+      </AboutUsContainer>
   );
 }
 
 export default AboutUs;
+
+const AboutUsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  background-color: #DECDF5;
+  width: 100%;
+  padding: 20px;
+
+  #descriptionDelProyecto {
+    margin-top: 20px;
+    color: #1C1D21;
+  }
+`;

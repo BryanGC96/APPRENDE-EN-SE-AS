@@ -4,6 +4,8 @@ import { styled } from '@mui/system';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import HttpIcon from '@mui/icons-material/Http';
 
 const Footer = () => {
   return (
@@ -26,12 +28,13 @@ const Footer = () => {
             </Typography>
             <Grid container>
               <Grid item xs={6}>
-                <Link href="/" variant="body2" color='#F8F1FF' display="block">Home</Link>
-                <Link href="/courses" variant="body2" color='#F8F1FF' display="block">Courses</Link>
+                <Link href="/" variant="body2" color='#F8F1FF' display="block">Inicio</Link>
+                <Link href="/courses" variant="body2" color='#F8F1FF' display="block">Cursos</Link>
               </Grid>
               <Grid item xs={6}>
-                <Link href="/aboutUs" variant="body2" color='#F8F1FF' display="block">About Us</Link>
-                <Link href="/contact" variant="body2" color='#F8F1FF' display="block">Contact</Link>
+                <Link href="/aboutUs" variant="body2" color='#F8F1FF' display="block">Nosotros</Link>
+                {/* PENDIENTE DE AGREGAR CONTENIDO DE CONTACTO? */}
+                <Link href="/contact" variant="body2" color='#F8F1FF' display="block">Contacto</Link>
               </Grid>
             </Grid>
           </Grid>
@@ -41,14 +44,14 @@ const Footer = () => {
               Síguenos
             </Typography>
             <Box display="flex" justifyContent="center">
-              <Link href="https://facebook.com" color="inherit" sx={{ marginRight: '0.5rem' }}>
+              <Link href="https://www.facebook.com/DeafTech.com.mx/" color="inherit" sx={{ marginRight: '0.5rem' }}>
                 <FacebookIcon />
               </Link>
-              <Link href="https://twitter.com" color="inherit" sx={{ marginRight: '0.5rem' }}>
-                <TwitterIcon />
+              <Link href="https://www.youtube.com/@DeafTech" color="inherit" sx={{ marginRight: '0.5rem' }}>
+                <YouTubeIcon/>
               </Link>
-              <Link href="https://instagram.com" color="inherit" sx={{ marginRight: '0.5rem' }}>
-                <InstagramIcon />
+              <Link href="https://www.deaftech.com.mx/?fbclid=IwZXh0bgNhZW0CMTAAAR3MH2vVsK9-HhAjDJw8SZN2im1aypUvfEgK0EXsc1ndujtj-4lI_g0RUow_aem_ARqWsfvLfqqpDlRntAVPuOQrdAgzMq4wGqQTpmMLRVFqTrJkp2DTuufYycRDQUWb4Y85Kn9m6KC_AKmjldGinHqK" color="inherit" sx={{ marginRight: '0.5rem' }}>
+                <HttpIcon />
               </Link>
             </Box>
           </Grid>

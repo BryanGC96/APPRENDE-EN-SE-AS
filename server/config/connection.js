@@ -1,5 +1,7 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/aprende-en-se-as');
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/aprende-en-se-as"
+);
 
 module.exports = mongoose.connection;

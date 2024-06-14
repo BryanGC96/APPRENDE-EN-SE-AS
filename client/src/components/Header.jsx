@@ -15,7 +15,7 @@ import MenuItem from '@mui/material/MenuItem';
 import SignLanguageIcon from '@mui/icons-material/SignLanguage';
 
 const courseOptions = ['Todos','Saludos', 'Números', 'Colores', 'Animales'];
-const pages = ['Inicio', 'Cursos', 'Iniciar Sesión', 'Crear Cuenta', 'Nosotros'];
+const pages = ['Inicio', 'Cursos', 'Iniciar Sesión','Nosotros'];
 const settings = ['Perfil', 'Cuenta', 'Panel', 'Cerrar Sesión'];
 
 function ResponsiveAppBar() {
@@ -57,7 +57,6 @@ function ResponsiveAppBar() {
     const routes = {
       'Inicio': '/',
       'Iniciar Sesión': '/login',
-      'Crear Cuenta': '/signup',
       'Nosotros': '/aboutUs',
        // AQUI PODEMOS AGREGAR MAS LINKS A LOS COMPONENTES DE LA PAGINA
     };
@@ -100,7 +99,7 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            App-rende En-señas
+            Apprende EnSeñas
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, justifyContent: 'flex-end', mr: 5 }}>
@@ -187,7 +186,7 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            App-rende En-señas
+            Apprende EnSeñas
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
             {pages.map((page) => (

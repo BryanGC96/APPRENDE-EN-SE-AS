@@ -15,11 +15,11 @@ function AboutUs() {
   }, []);
 
   const teamMembers = [
-    { name: 'Emilio', src: '/src/assets/Emilio.png', bio: 'Front_end Developer', link: 'https://github.com/EmilioColds' },
-    { name: 'Fernando', src: '/src/assets/Fernando.png', bio: 'Back_end Developer', link: 'https://github.com/lage356' },
-    { name: 'Carlos', src: '/src/assets/Carlos.png', bio: 'Back_end Developer', link: 'https://github.com/carlos-roma' },
-    { name: 'Bryan', src: '/src/assets/Bryan.png', bio: 'Front_end Developer', link: 'https://github.com/BryanGC96' },
-    { name: 'Poncho', src: '/src/assets/Poncho.png', bio: 'Innovation & Back_end Developer', link: 'https://github.com/PonchoBT' },
+    { name: 'Emilio Frías', src: '/src/assets/Emilio.png', bio: 'Front_end Developer', link: 'https://github.com/EmilioColds' },
+    { name: 'Fernando Lage', src: '/src/assets/Fernando.png', bio: 'Back_end Developer', link: 'https://github.com/lage356' },
+    { name: 'Carlos Rodríguez', src: '/src/assets/Carlos.png', bio: 'Back_end Developer', link: 'https://github.com/carlos-roma' },
+    { name: 'Bryan Gómez', src: '/src/assets/Bryan.png', bio: 'Front_end Developer', link: 'https://github.com/BryanGC96' },
+    { name: 'Poncho Balderas', src: '/src/assets/Poncho.png', bio: 'Innovation & Back_end Developer', link: 'https://github.com/PonchoBT' },
   ];
 
   return (
@@ -34,7 +34,7 @@ function AboutUs() {
           >
             <Box textAlign="center" sx={{  margin: 2 }}>
               <Avatar alt={`Imagen de perfil ${member.name}`} src={member.src} sx={{ width: 250, height: 250, marginBottom: 1 }} />
-              <Typography variant="h4" sx={{ color: '#1C1D21', fontWeight: '600' }}>{member.name}</Typography>
+              <Typography variant="h6" sx={{ color: '#1C1D21', fontWeight: '600' }}>{member.name}</Typography>
               <Typography variant="body2" sx={{ color: '#1C1D21' }}>{member.bio}</Typography>
               <Link href={member.link} sx={{ color: '#1B998B' }}>GitHub Profile</Link>
             </Box>

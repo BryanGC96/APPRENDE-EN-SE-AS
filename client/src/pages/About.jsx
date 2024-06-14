@@ -41,7 +41,7 @@ function AboutUs() {
           </Grow>
         ))}
       </AvatarContainer>
-      <Description id='descriptionDelProyecto'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione laboriosam quae, doloremque eos voluptates nihil voluptatibus rerum sequi quia, vel, laudantium iure tenetur labore quis quos non magni esse obcaecati?</Description>
+      <Description id='descriptionDelProyecto'> Apprende EnSeñas es una plataforma dedicada a enseñar e lenguaje de señas.</Description>
     </AboutUsContainer>
   );
 }
@@ -60,7 +60,7 @@ const AboutUsContainer = styled.div`
   padding: 20px;
 `;
 
-const AvatarContainer = styled(Stack)`
+const AvatarContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

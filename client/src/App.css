@@ -44,6 +44,7 @@
 
 .aboutUsAvatarsContainers {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   margin: 0 auto; /* Centra el contenedor horizontalmente */
   box-sizing: border-box; /* Especifica como sera modificado el width y height */

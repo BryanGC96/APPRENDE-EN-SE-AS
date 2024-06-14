@@ -15,11 +15,11 @@ function AboutUs() {
   }, []);
 
   const teamMembers = [
-    { name: 'Emilio', src: '/src/assets/Emilio.png', bio: 'Front_end Developer', link: '#' },
-    { name: 'Fernando', src: '/src/assets/Fernando.png', bio: 'Back_end Developer', link: '#' },
-    { name: 'Carlos', src: '/src/assets/Carlos.png', bio: 'Back_end Developer', link: '#' },
-    { name: 'Bryan', src: '/src/assets/Bryan.png', bio: 'Front_end Developer', link: '#' },
-    { name: 'Poncho', src: '/src/assets/Poncho.png', bio: 'Innovation & Back_end Developer', link: '#' },
+    { name: 'Emilio', src: '/src/assets/Emilio.png', bio: 'Front_end Developer', link: 'https://github.com/EmilioColds' },
+    { name: 'Fernando', src: '/src/assets/Fernando.png', bio: 'Back_end Developer', link: 'https://github.com/lage356' },
+    { name: 'Carlos', src: '/src/assets/Carlos.png', bio: 'Back_end Developer', link: 'https://github.com/carlos-roma' },
+    { name: 'Bryan', src: '/src/assets/Bryan.png', bio: 'Front_end Developer', link: 'https://github.com/BryanGC96' },
+    { name: 'Poncho', src: '/src/assets/Poncho.png', bio: 'Innovation & Back_end Developer', link: 'https://github.com/PonchoBT' },
   ];
 
   return (

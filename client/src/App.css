@@ -22,7 +22,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-   /* Ajustar dependiendo del Footer */
   margin: 0 auto; /* Centra el contenido Horizontalmente*/
   max-width: 90%;
 }

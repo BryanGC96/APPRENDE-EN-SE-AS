@@ -33,7 +33,7 @@ function AboutUs() {
             timeout={1000 + index * 400}
           >
             <Box textAlign="center" sx={{ marginRight: 2 }}>
-              <Avatar alt={`Imagen de perfil ${member.name}`} src={member.src} sx={{ width: 250, height: 250, marginBottom: 1 }} />
+              <Avatar alt={`Imagen de perfil ${member.name}`} src={member.src} sx={{ width: 150, height: 150, marginBottom: 1 }} />
               <Typography variant="h4" sx={{ color: '#1C1D21', fontWeight: '600' }}>{member.name}</Typography>
               <Typography variant="body2" sx={{ color: '#1C1D21' }}>{member.bio}</Typography>
               <Link href={member.link} sx={{ color: '#1B998B' }}>GitHub Profile</Link>

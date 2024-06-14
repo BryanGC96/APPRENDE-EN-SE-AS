@@ -99,7 +99,7 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            App-rende En-señas
+            Apprende EnSeñas
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, justifyContent: 'flex-end', mr: 5 }}>
@@ -186,7 +186,7 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            App-rende En-señas
+            Apprende EnSeñas
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
             {pages.map((page) => (

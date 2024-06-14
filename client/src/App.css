@@ -1,12 +1,7 @@
-/* #root {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-} */
 #root {
   display: flex;
   flex-direction: column;
-  min-height: 100%;
+  min-height: 100vh;
   overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
@@ -18,8 +13,10 @@
 
 .content {
   flex: 1;
-  padding-top: 15%; /* Ajustar dependiendo del NavBar */
-  padding-bottom: 15%; /* Ajustar dependiendo del Footer */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto; /* Centra el contenido Horizontalmente*/
   max-width: 90%;
 }
@@ -31,26 +28,6 @@
     padding-bottom: 15%; 
     max-width: 90%; 
   }
-}
-
-.aboutUsContentBox {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  text-align: center;
-  font-size: 1rem;
-  /* background-color: black; */
-  justify-content: center;
-  width: 100%; 
-  margin: 0 auto; /* Centra el contenedor horizontalmente */
-  box-sizing: border-box; /* Especifica como sera modificado el width y height */
-}
-
-
-.aboutUsAvatarsContainers {
-  display: flex;
-  justify-content: center;
-  margin: 0 auto; /* Centra el contenedor horizontalmente */
-  box-sizing: border-box; /* Especifica como sera modificado el width y height */
-  /* background-color: aquamarine; */
 }
 
 #tituloEquipo {

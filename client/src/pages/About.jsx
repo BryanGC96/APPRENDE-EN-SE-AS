@@ -24,7 +24,7 @@ function AboutUs() {
 
   return (
     <AboutUsContainer>
-      <Stack className="aboutUsAvatarsContainers" direction="row" spacing={25} justifyContent="center">
+      <AvatarContainer>
         {teamMembers.map((member, index) => (
           <Grow
             key={member.name}
@@ -32,17 +32,17 @@ function AboutUs() {
             style={{ transformOrigin: '0 0 0' }}
             timeout={1000 + index * 400}
           >
-            <Box textAlign="center" sx={{ marginRight: 2 }}>
-              <Avatar alt={`Imagen de perfil ${member.name}`} src={member.src} sx={{ width: 150, height: 150, marginBottom: 1 }} />
+            <Box textAlign="center" sx={{  margin: 2 }}>
+              <Avatar alt={`Imagen de perfil ${member.name}`} src={member.src} sx={{ width: 250, height: 250, marginBottom: 1 }} />
               <Typography variant="h4" sx={{ color: '#1C1D21', fontWeight: '600' }}>{member.name}</Typography>
               <Typography variant="body2" sx={{ color: '#1C1D21' }}>{member.bio}</Typography>
               <Link href={member.link} sx={{ color: '#1B998B' }}>GitHub Profile</Link>
             </Box>
           </Grow>
         ))}
-      </Stack>
-      <h4 id='descriptionDelProyecto'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione laboriosam quae, doloremque eos voluptates nihil voluptatibus rerum sequi quia, vel, laudantium iure tenetur labore quis quos non magni esse obcaecati?</h4>
-      </AboutUsContainer>
+      </AvatarContainer>
+      <Description id='descriptionDelProyecto'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione laboriosam quae, doloremque eos voluptates nihil voluptatibus rerum sequi quia, vel, laudantium iure tenetur labore quis quos non magni esse obcaecati?</Description>
+    </AboutUsContainer>
   );
 }
 
@@ -53,14 +53,34 @@ const AboutUsContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  min-height: 100vh;
   text-align: center;
   background-color: #DECDF5;
   width: 100%;
   padding: 20px;
+`;
 
-  #descriptionDelProyecto {
-    margin-top: 20px;
-    color: #1C1D21;
+const AvatarContainer = styled(Stack)`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
+const Description = styled.h4`
+  margin-top: 20px;
+  color: #1C1D21;
+  max-width: 800px;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    margin-bottom: 20px;
+    padding: 0 20px;
   }
 `;

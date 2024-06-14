@@ -19,7 +19,7 @@ const Footer = () => {
               Apprende EnSeñas es una plataforma dedicada a enseñar en lenguaje de señas.
             </Typography>
           </Grid>
-          {/* Segunda columna 'copyright' */}
+          {/* Segunda columna 'Copyright' */}
           <Grid item xs={12} sm={4}>
             <Box display="flex" justifyContent="center">
               <Typography variant="body2" color='#1B998B' align="center" style={{ marginBottom: '0px' }}>

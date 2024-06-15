@@ -1,31 +1,46 @@
-import React from 'react';
-import styled from 'styled-components';
-import CourseCard from '../components/CourseCard';
+import React from "react";
+import styled from "styled-components";
+import CourseCard from "../components/CourseCard";
+import { useParams } from "react-router-dom";
+import { useQuery } from "@apollo/client";
+import { GET_COURSES, GET_ONE_COURSE } from "../utils/queries.js";
+
+const CourseListContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  background-color: #decdf5;
+`;
 
 const CourseList = () => {
-    const courses = [
-        { id: 1, title: '¡Aprende a codificar HTML súper rápido! 🚀', description: 'Primera parte del curso de HTML', videoId: 'https://www.youtube.com/embed/vc6b2IqYMKQ'}, //Posible agregar "courseCategory" como nivel de complejidad 
-        { id: 2, title: '¡Aprende a codificar HTML súper rápido! 🚀 Parte 2', description: 'Segunda parte del curso de HTML', videoId: 'https://www.youtube.com/embed/IgrobRiJfjw'},
-        { id: 3, title: '¿Qué es el lenguaje de programación Java? en LSM', description: 'Introducción al lenguaje de programación Java', videoId: 'https://www.youtube.com/embed/KQj2uHZq_Tg'},
-    ];
+  const { choice } = useParams();
+  console.log(choice);
 
-    return (
-        <CourseListContainer>
-            {courses.map((course) => (
-                <CourseCard key={course.id} course={course} />
-            ))}
-        </CourseListContainer>
-    );
+  const { data } = useQuery(choice === "Todos" ? GET_COURSES : GET_ONE_COURSE, {
+    variables: {
+      title: choice,
+    },
+  });
+
+  const singleCourse = data?.courseByName || {};
+  const allCourses = data?.courses || [];
+  //   const info = data?.courses || data?.course || {};
+  console.log(singleCourse);
+
+  return (
+    <CourseListContainer>
+      {choice === "Todos" ? (
+        allCourses?.map((course) => (
+          <CourseCard key={course.id} course={course} />
+        ))
+      ) : (
+        <CourseCard course={singleCourse} />
+      )}
+    </CourseListContainer>
+  );
 };
 
 export default CourseList;
-
-const CourseListContainer = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    padding: 20px;
-    background-color: #DECDF5;
-`;

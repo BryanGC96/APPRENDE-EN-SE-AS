@@ -12,8 +12,11 @@ const resolvers = {
     courses: async () => {
       return Course.find().populate("videos");
     },
-    course: async (parent, { courseId }) => {
-      return Course.findOne({ _id: courseId });
+    courseByName: async (parent, { title }) => {
+      return Course.findOne({ title: title });
+    },
+    courseById: async (parent, { courseId }) => {
+      return Course.findOne({ _id: courseId }).populate("videos");
     },
     me: async (parent, args, context) => {
       if (context.user) {

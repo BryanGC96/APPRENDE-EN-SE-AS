@@ -38,7 +38,8 @@ type Auth {
 
 type Query {
     courses: [Course]
-    course(courseId: ID!): Course   
+    courseByName(title: String!): Course   
+    courseById(courseId: ID!): Course 
     videos:[Video] 
     me: User
 }

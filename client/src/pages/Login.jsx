@@ -1,10 +1,9 @@
-
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useMutation } from '@apollo/client';
-import styled from 'styled-components';
-import { LOGIN } from '../../utils/mutations';
-import Auth from '../../utils/auth';
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { useMutation } from "@apollo/client";
+import styled from "styled-components";
+import { LOGIN } from "../utils/mutations";
+import Auth from "../utils/auth";
 
 const Main = styled.main`
   display: flex;
@@ -71,7 +70,7 @@ const ErrorMessage = styled.div`
 `;
 
 const Login = (props) => {
-  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [formState, setFormState] = useState({ email: "", password: "" });
   const [login, { error, data }] = useMutation(LOGIN);
 
   const handleChange = (event) => {
@@ -95,8 +94,8 @@ const Login = (props) => {
     }
 
     setFormState({
-      email: '',
-      password: '',
+      email: "",
+      password: "",
     });
   };
 
@@ -108,7 +107,8 @@ const Login = (props) => {
           <CardBody>
             {data ? (
               <p>
-                Success! You may now head <Link to="/">back to the homepage.</Link>
+                Success! You may now head{" "}
+                <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
               <Form onSubmit={handleFormSubmit}>

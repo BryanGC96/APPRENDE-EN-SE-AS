@@ -3,12 +3,12 @@ const { singToken, AuthenticationError, signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
-    // users: async () => {
-    //   return User.find();
-    // },
-    // user: async (parent, { userID }) => {
-    //   return User.findOne({ _id: userID });
-    // },
+    users: async () => {
+      return User.find();
+    },
+    user: async (parent, { userID }) => {
+      return User.findOne({ _id: userID });
+    },
     courses: async () => {
       return Course.find().populate("videos");
     },

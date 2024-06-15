@@ -3,6 +3,7 @@ import { Container, TextField, Button, Box, Typography } from '@mui/material';
 import { styled } from '@mui/system';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
+import { Link } from 'react-router-dom';
 
 const Signup = () => {
   const [formState, setFormState] = useState({
@@ -40,13 +41,21 @@ const Signup = () => {
   };
 
   return (
+
     <OuterContainer>
+      
       <StyledContainer>
+   
         <Typography variant="h4" gutterBottom>
           Crear cuenta
         </Typography>
 
-
+        {data ? (
+              <p>
+                Success! You may now head{' '}
+                <Link to="/">back to the homepage.</Link>
+              </p>
+            ) : (
         <form onSubmit={handleFormSubmit}>
           <StyledTextField
             label="Nombre de usuario"
@@ -94,8 +103,16 @@ const Signup = () => {
             </StyledButton>
           </Box>
         </form>
+    )}
+
+    {error && (
+      <div className="my-3 p-3 bg-danger text-white">
+        {error.message}
+      </div>
+    )}
 
       </StyledContainer>
+        
     </OuterContainer>
   );
 };

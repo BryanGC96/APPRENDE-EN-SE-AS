@@ -6,7 +6,7 @@ import { ADD_USER } from '../utils/mutations';
 
 const Signup = () => {
   const [formState, setFormState] = useState({
-    name: '',
+    username: '',
     email: '',
     password: '',
   });
@@ -39,13 +39,13 @@ const Signup = () => {
     }
   };
 
-  return ( 
+  return (
     <OuterContainer>
       <StyledContainer>
         <Typography variant="h4" gutterBottom>
           Crear cuenta
         </Typography>
-   
+
 
         <form onSubmit={handleFormSubmit}>
           <StyledTextField
@@ -53,9 +53,9 @@ const Signup = () => {
             variant="outlined"
             fullWidth
             margin="normal"
-            name="name"
+            name="username"
             type="text"
-            value={formState.name}
+            value={formState.username}
             onChange={handleChange}
           />
           <StyledTextField
@@ -94,7 +94,7 @@ const Signup = () => {
             </StyledButton>
           </Box>
         </form>
-   
+
       </StyledContainer>
     </OuterContainer>
   );

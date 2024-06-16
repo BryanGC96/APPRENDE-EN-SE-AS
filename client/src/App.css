@@ -13,26 +13,50 @@
 
 .content {
   flex: 1;
-  display: flex;
+  padding: 15% 2%;
+  /* margin: 0 auto; Centra el contenido Horizontalmente */
+  /* max-width: 90%; */
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0 auto; /* Centra el contenido Horizontalmente*/
-  max-width: 90%;
+  /* max-width: 90%;  */
 }
 
 /* Ajusta la vista para pantallas pequeñas */
 @media (max-width: 768px) {
   .content {
-    padding-top: 15%; 
-    padding-bottom: 15%; 
-    max-width: 90%; 
+    padding-top: 15%;
+    padding-bottom: 15%;
+    max-width: 90%;
   }
+}
+
+.aboutUsContentBox {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-align: center;
+  font-size: 1rem;
+
+  /* background-color: black; */
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  box-sizing: border-box; /* Especifica como sera modificado el width y height */
+}
+
+.aboutUsAvatarsContainers {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  box-sizing: border-box; /* Especifica como sera modificado el width y height */
+  /* background-color: aquamarine; */
 }
 
 #tituloEquipo {
   margin-bottom: 2%;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-style: italic;
   font-weight: 100;
 }

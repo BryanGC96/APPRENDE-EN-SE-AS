@@ -20,6 +20,8 @@ const HomeContainer = styled.div`
     height: 100vh;
     text-align: center;
     background-color: #DECDF5;
+    height: 100%;
+    padding: 20px;
 
     h1 {
         font-size: 40px;

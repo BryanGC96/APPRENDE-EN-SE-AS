@@ -136,7 +136,7 @@ function ResponsiveAppBar() {
               textDecoration: "none",
             }}
           >
-            App-rende En-señas
+            Apprende EnSeñas
           </Typography>
 
           <Box
@@ -237,7 +237,7 @@ function ResponsiveAppBar() {
               textDecoration: "none",
             }}
           >
-            App-rende En-señas
+            Apprende EnSeñas
           </Typography>
           <Box
             sx={{

@@ -9,6 +9,7 @@ const Main = styled.main`
   display: flex;
   justify-content: center;
   margin-bottom: 4rem;
+  padding: 15% 2%;
 `;
 
 const Container = styled.div`
@@ -97,10 +98,6 @@ const Login = (props) => {
       email: "",
       password: "",
     });
-  };
-
-  const handleCreateAccountClick = () => {
-    navigate("/signup");
   };
 
   return (

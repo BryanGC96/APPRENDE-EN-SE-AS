@@ -29,37 +29,39 @@ const CourseDetail = () => {
   const courseData = data?.courseById || {};
 
   return (
-    <CourseContainer>
-      <ContentWrapper>
-        <VideoSection>
-          <Title>{courseData.title}</Title>
-          <VideoWrapper>
-            <iframe
-              title={video.title}
-              src={video.video_url}
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            />
-          </VideoWrapper>
-          <CommentsSection>
-            <h3>Comments</h3>
-            <Comments>Comments will be displayed here.</Comments>
-          </CommentsSection>
-        </VideoSection>
-        <Sidebar>
-          <SidebarTitle>Course Content</SidebarTitle>
-          <VideoList>
-            {courseData.videos?.map((video, i) => (
-              <VideoItem key={i} onClick={() => setVideo(video)}>
-                <h4>{video.title}</h4>
-              </VideoItem>
-            ))}
-          </VideoList>
-        </Sidebar>
-      </ContentWrapper>
-    </CourseContainer>
+    <div style={{ padding: "15% 2%" }}>
+      <CourseContainer>
+        <ContentWrapper>
+          <VideoSection>
+            <Title>{courseData.title}</Title>
+            <VideoWrapper>
+              <iframe
+                title={video.title}
+                src={video.video_url}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </VideoWrapper>
+            <CommentsSection>
+              <h3>Comments</h3>
+              <Comments>Comments will be displayed here.</Comments>
+            </CommentsSection>
+          </VideoSection>
+          <Sidebar>
+            <SidebarTitle>Course Content</SidebarTitle>
+            <VideoList>
+              {courseData.videos?.map((video, i) => (
+                <VideoItem key={i} onClick={() => setVideo(video)}>
+                  <h4>{video.title}</h4>
+                </VideoItem>
+              ))}
+            </VideoList>
+          </Sidebar>
+        </ContentWrapper>
+      </CourseContainer>
+    </div>
   );
 };
 

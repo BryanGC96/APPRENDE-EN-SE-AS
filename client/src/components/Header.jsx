@@ -13,15 +13,13 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import SignLanguageIcon from "@mui/icons-material/SignLanguage";
+import Auth from "../utils/auth";
 
 const courseOptions = ["Todos", "Saludos", "Números", "Colores", "Animales"];
-const pages = [
-  "Inicio",
-  "Cursos",
-  "Iniciar Sesión",
-  "Crear Cuenta",
-  "Nosotros",
-];
+let authLoginOptions = Auth.loggedIn()
+  ? ["logout"]
+  : ["Iniciar Sesión", "Crear Cuenta"];
+const pages = ["Inicio", "Cursos", ...authLoginOptions, "Nosotros"];
 const settings = ["Perfil", "Cuenta", "Panel", "Cerrar Sesión"];
 
 function ResponsiveAppBar() {
@@ -61,11 +59,17 @@ function ResponsiveAppBar() {
   const handlePageClick = (page) => {
     handleCloseNavMenu();
 
+    if (page === "logout") {
+      Auth.logout();
+      return;
+    }
+
     const routes = {
       Inicio: "/",
       "Iniciar Sesión": "/login",
       "Crear Cuenta": "/signup",
       Nosotros: "/aboutUs",
+
       // AQUI PODEMOS AGREGAR MAS LINKS A LOS COMPONENTES DE LA PAGINA
     };
 

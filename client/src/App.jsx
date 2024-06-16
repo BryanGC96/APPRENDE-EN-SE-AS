@@ -11,6 +11,8 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import { ThemeProvider, CssBaseline } from "@mui/material";
 import theme from "./theme";
+
+import Auth from "./utils/auth";
 import {
   ApolloClient,
   InMemoryCache,
@@ -48,11 +50,14 @@ function App() {
         <Router>
           <div className="app-container">
             <ResponsiveAppBar /> {/**Navbar */}
-            <main className="content">
+            <main>
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/courses/:choice" element={<CourseList />} />
-                <Route path="/courses/:course/:id" element={<CourseDetail />} />
+                <Route
+                  path="/courses/:course/:id"
+                  element={Auth.loggedIn() ? <CourseDetail /> : <Login />}
+                />
                 <Route path="/aboutUs" element={<AboutUs />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/login" element={<Login />} />

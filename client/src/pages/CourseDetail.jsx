@@ -5,9 +5,21 @@ import { useQuery } from "@apollo/client";
 import { GET_COURSE_BY_ID } from "../utils/queries";
 
 const CourseDetail = () => {
-  const [video, setVideo] = useState({});
+  const { id, course } = useParams();
+  let defaultVideo;
 
-  const { id } = useParams();
+  if (course === "Numeros") {
+    defaultVideo =
+      "https://www.youtube.com/embed/A1dAHmzpcX0?si=xWkmZ76DGMlbN5rW";
+  } else if (course === "Saludos") {
+    defaultVideo =
+      "https://www.youtube.com/embed/qkYoBNdcXBU?si=jV6FsxzWqPP94yR-";
+  }
+
+  const [video, setVideo] = useState({
+    video_url: defaultVideo,
+  });
+
   const { data } = useQuery(GET_COURSE_BY_ID, {
     variables: {
       courseId: id,

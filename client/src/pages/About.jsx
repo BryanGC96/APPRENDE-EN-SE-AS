@@ -86,7 +86,7 @@ function AboutUs() {
       </AvatarContainer>
       <Description id="descriptionDelProyecto">
         {" "}
-        Apprende EnSeñas es una plataforma dedicada a enseñar e lenguaje de
+        Apprende EnSeñas es una plataforma dedicada a enseñar e lengua de
         señas.
       </Description>
     </AboutUsContainer>

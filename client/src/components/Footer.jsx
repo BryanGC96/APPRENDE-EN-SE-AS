@@ -16,7 +16,7 @@ const Footer = () => {
               Nosotros
             </Typography>
             <Typography variant="body2" color='#F8F1FF' style={{ lineHeight: '1.5', fontSize: '0.75rem' }}>
-              Apprende EnSeñas es una plataforma dedicada a enseñar en lenguaje de señas.
+              Apprende EnSeñas es una plataforma dedicada a enseñar en lengua de señas.
             </Typography>
           </Grid>
           {/* Segunda columna 'Copyright' */}
@@ -41,7 +41,7 @@ const Footer = () => {
               <Link href="https://www.youtube.com/@DeafTech" color="inherit" sx={{ marginRight: '0.5rem' }}>
                 <YouTubeIcon />
               </Link>
-              <Link href="https://www.deaftech.com.mx/?fbclid=IwZXh0bgNhZW0CMTAAAR3MH2vVsK9-HhAjDJw8SZN2im1aypUvfEgK0EXsc1ndujtj-4lI_g0RUow_aem_ARqWsfvLfqqpDlRntAVPuOQrdAgzMq4wGqQTpmMLRVFqTrJkp2DTuufYycRDQUWb4Y85Kn9m6KC_AKmjldGinHqK" color="inherit">
+              <Link href="https://www.deaftech.com.mx" color="inherit">
                 <HttpIcon />
               </Link>
             </Box>

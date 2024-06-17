@@ -57,7 +57,7 @@ export default Footer;
 const FooterContainer = styled('footer')(({ theme }) => ({
   backgroundColor: '#1C1D21',
   color: '#F8F1FF',
-  padding: theme.spacing(0, 0),
+  padding: '20px',
   position: 'fixed',
   bottom: 0,
   width: '100%',

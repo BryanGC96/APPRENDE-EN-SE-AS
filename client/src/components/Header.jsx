@@ -15,9 +15,7 @@ import SignLanguageIcon from "@mui/icons-material/SignLanguage";
 import Auth from "../utils/auth";
 
 const courseOptions = ["Todos", "Saludos", "Números", "Colores", "Animales"];
-let authLoginOptions = Auth.loggedIn()
-  ? ["logout"]
-  : ["Iniciar Sesión"];
+let authLoginOptions = Auth.loggedIn() ? ["Cerrar Sesión"] : ["Iniciar Sesión"];
 const pages = ["Inicio", "Cursos", ...authLoginOptions, "Nosotros"];
 const settings = ["Perfil", "Cuenta", "Panel", "Cerrar Sesión"];
 
@@ -58,7 +56,7 @@ function ResponsiveAppBar() {
   const handlePageClick = (page) => {
     handleCloseNavMenu();
 
-    if (page === "logout") {
+    if (page === "Cerrar Sesión") {
       Auth.logout();
       return;
     }

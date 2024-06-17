@@ -2,11 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-
-
-
 const CourseCard = ({ course }) => {
-
   let defaultImage;
 
   switch (course.title) {
@@ -28,7 +24,7 @@ const CourseCard = ({ course }) => {
 
   return (
     <Card>
-       <CourseImage src={defaultImage} alt={course.title} />
+      <CourseImage src={defaultImage} alt={course.title} />
       <h3> {course.title} </h3>
       <p> {course.description} </p>
       <Link to={`/courses/${course.title}/${course._id}`}> Ver Curso </Link>

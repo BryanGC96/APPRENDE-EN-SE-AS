@@ -8,7 +8,6 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
@@ -18,7 +17,7 @@ import Auth from "../utils/auth";
 const courseOptions = ["Todos", "Saludos", "Números", "Colores", "Animales"];
 let authLoginOptions = Auth.loggedIn()
   ? ["logout"]
-  : ["Iniciar Sesión", "Crear Cuenta"];
+  : ["Iniciar Sesión"];
 const pages = ["Inicio", "Cursos", ...authLoginOptions, "Nosotros"];
 const settings = ["Perfil", "Cuenta", "Panel", "Cerrar Sesión"];
 
@@ -67,7 +66,6 @@ function ResponsiveAppBar() {
     const routes = {
       Inicio: "/",
       "Iniciar Sesión": "/login",
-      "Crear Cuenta": "/signup",
       Nosotros: "/aboutUs",
 
       // AQUI PODEMOS AGREGAR MAS LINKS A LOS COMPONENTES DE LA PAGINA

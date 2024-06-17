@@ -12,7 +12,7 @@ const courseSeeds = [
   {
     title: "Saludos",
     description: "Aprende animales en señas nivel 1",
-    courseCategory: "Animales 1",
+    courseCategory: "Saludos 1",
   },
   {
     title: "Animales",

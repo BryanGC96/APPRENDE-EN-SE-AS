@@ -36,8 +36,8 @@ Just click the following link to access the live application: [Apprende EnSeñas
 
 ## How to Use This Application
   Once the application is runnin on a web browser 
-
-  D:\Escuela\Bootcamp\Project 3\Starting\APPRENDE-EN-SE-AS\Screenshot (289).png
+  
+![Screenshot (289)](https://github.com/BryanGC96/APPRENDE-EN-SE-AS/assets/68045584/463fe0ad-ea9d-4033-866f-764db7ed4782)
 
   Users can create accounts,
 

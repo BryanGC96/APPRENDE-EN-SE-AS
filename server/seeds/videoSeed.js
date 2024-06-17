@@ -129,7 +129,7 @@ const videoSeeds = [
     title: "¿Como estas?",
     description: "Learn the sign for '¿Como estas?' in sign language.",
     video_url: "https://www.youtube.com/embed/Noz54rVfSHM",
-    category: "Saudos 1",
+    category: "Saludos 1",
   },
   {
     title: "Bien",
@@ -153,7 +153,7 @@ const videoSeeds = [
     title: "Buenas tardes",
     description: "Learn the sign for 'Buenas tardes' in sign language.",
     video_url: "https://www.youtube.com/embed/DEAAQnhf1WQ",
-    category: "Saudos 1",
+    category: "Saludos 1",
   },
   {
     title: "Buenas noches",

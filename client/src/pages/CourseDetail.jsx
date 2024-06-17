@@ -9,12 +9,15 @@ const CourseDetail = () => {
   let defaultVideo;
 
   if (course === "Numeros") {
-    defaultVideo =
-      "https://www.youtube.com/embed/A1dAHmzpcX0?si=xWkmZ76DGMlbN5rW";
+    defaultVideo = "https://www.youtube.com/embed/8QT7MlxaSPU";
   } else if (course === "Saludos") {
-    defaultVideo =
-      "https://www.youtube.com/embed/qkYoBNdcXBU?si=jV6FsxzWqPP94yR-";
-  }
+    defaultVideo = "https://www.youtube.com/embed/VWnQGLJDY6M";
+  } else if (course === "Animales") {
+    defaultVideo = "https://www.youtube.com/embed/GLQBgHN47u0";
+  } else if (course === "Colores") {
+    defaultVideo = "https://www.youtube.com/embed/LUve7X89p4o";
+  } 
+  
 
   const [video, setVideo] = useState({
     video_url: defaultVideo,
@@ -33,7 +36,7 @@ const CourseDetail = () => {
       <CourseContainer>
         <ContentWrapper>
           <VideoSection>
-            <Title>{courseData.title}</Title>
+            <Title>{courseData.title} {video.title}</Title>
             <VideoWrapper>
               <iframe
                 title={video.title}

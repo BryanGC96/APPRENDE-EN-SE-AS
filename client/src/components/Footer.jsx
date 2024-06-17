@@ -16,7 +16,7 @@ const Footer = () => {
               Nosotros
             </Typography>
             <Typography variant="body2" color='#F8F1FF' style={{ lineHeight: '1.5', fontSize: '0.75rem' }}>
-              Apprende EnSeñas es una plataforma dedicada a enseñar en lenguaje de señas.
+              Apprende EnSeñas es una plataforma dedicada a enseñar en Lengua de señas.
             </Typography>
           </Grid>
           {/* Segunda columna 'Copyright' */}

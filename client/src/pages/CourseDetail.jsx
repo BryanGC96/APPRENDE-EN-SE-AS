@@ -7,20 +7,25 @@ import { GET_COURSE_BY_ID } from "../utils/queries";
 const CourseDetail = () => {
   const { id, course } = useParams();
   let defaultVideo;
+  let defaultText;
 
   if (course === "Numeros") {
     defaultVideo = "https://www.youtube.com/embed/8QT7MlxaSPU";
+    defaultText = "Aprenderás a contar del 1 al 100 y cómo combinar números para formar otros.";
   } else if (course === "Saludos") {
     defaultVideo = "https://www.youtube.com/embed/VWnQGLJDY6M";
+    defaultText = "Saludos y Presentaciones: Cómo presentarte, saludar y despedirte.";
   } else if (course === "Animales") {
     defaultVideo = "https://www.youtube.com/embed/GLQBgHN47u0";
+    defaultText = "Aprenderás las señas de diferentes animales.";
   } else if (course === "Colores") {
     defaultVideo = "https://www.youtube.com/embed/LUve7X89p4o";
-  } 
-  
+    defaultText = "Aprenderás las señas para los colores básicos.";
+  }
 
   const [video, setVideo] = useState({
     video_url: defaultVideo,
+    title: defaultText,
   });
 
   const { data } = useQuery(GET_COURSE_BY_ID, {
@@ -36,7 +41,7 @@ const CourseDetail = () => {
       <CourseContainer>
         <ContentWrapper>
           <VideoSection>
-            <Title>{courseData.title} {video.title}</Title>
+            <Title>{video.title}</Title>
             <VideoWrapper>
               <iframe
                 title={video.title}

@@ -28,7 +28,8 @@ Just click the following link to access the live application: [Apprende EnSeñas
 - Node.js
 - Express.js
 - MongoDB
-- Queries and Mutations
+- Materials UI
+- Apollo Server
 - Authentication (JWT)
 - Figma UI
 - GitHub

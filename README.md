@@ -37,23 +37,23 @@ Just click the following link to access the live application: [Apprende EnSeñas
 ## How to Use This Application
   Once the application is runnin on a web browser 
   
-![Screenshot (289)](https://github.com/BryanGC96/APPRENDE-EN-SE-AS/assets/68045584/463fe0ad-ea9d-4033-866f-764db7ed4782)
+![home image](./client/src/assets/home.png)
 
   Users can create accounts,
 
-  ![Screenshot (290)](https://github.com/BryanGC96/APPRENDE-EN-SE-AS/assets/68045584/75542ad1-06d8-4f69-bd99-ec960c355b8d)
+  ![create account image](./client/src/assets/Crear%20cuenta.png)
 
    Log in
 
-![Screenshot (294)](https://github.com/BryanGC96/APPRENDE-EN-SE-AS/assets/68045584/1b8ec67b-2738-48a4-b189-4483dcb283ef)
+![login image](./client/src/assets/login.png))
 
   Browse available courses and enroll in courses
 
-![Screenshot (287)](https://github.com/BryanGC96/APPRENDE-EN-SE-AS/assets/68045584/9a45937c-4864-4b3d-ba7b-17f671bd57d2)
+![all courses image](./client/src/assets/cursos.png)
 
    To start learning sign language.
    
-   ![Screenshot (297)](https://github.com/BryanGC96/APPRENDE-EN-SE-AS/assets/68045584/4a0b5b81-e819-4629-8377-a46e2a7be61f)
+   ![imagen de cursos](./client/src/assets/curso.png)
 
   
   ## Contributors

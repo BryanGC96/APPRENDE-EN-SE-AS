@@ -36,24 +36,25 @@ Just click the following link to access the live application: [Apprende EnSeñas
 
 ## How to Use This Application
   Once the application is runnin on a web browser 
-
-  ![home](<Screenshot (289).png>)
+  
+![home image](./client/src/assets/home.png)
 
   Users can create accounts,
 
-  ![register](<Screenshot (290).png>)
+  ![create account image](./client/src/assets/Crear%20cuenta.png)
 
    Log in
 
-   ![login](<Screenshot (290)-1.png>)
+![login image](./client/src/assets/login.png))
 
   Browse available courses and enroll in courses
 
-  ![alt text](<Screenshot (287).png>)
+![all courses image](./client/src/assets/cursos.png)
 
    To start learning sign language.
    
-   ![alt text](<Screenshot (297).png>)
+   ![imagen de cursos](./client/src/assets/curso.png)
+
   
   ## Contributors
   * Fernando Lage - https://github.com/lage356

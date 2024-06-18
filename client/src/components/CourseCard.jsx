@@ -1,25 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import numeros from "../assets/numeros.png";
+import saludos from "../assets/saludos.png";
+import animales from "../assets/animales.png";
+import colores from "../assets/colores.png";
 
 const CourseCard = ({ course }) => {
   let defaultImage;
 
   switch (course.title) {
     case "Numeros":
-      defaultImage = "../../src/assets/numeros.png";
+      defaultImage = numeros;
       break;
     case "Saludos":
-      defaultImage = "../../src/assets/saludos.png";
+      defaultImage = saludos;
       break;
     case "Animales":
-      defaultImage = "../../src/assets/animales.png";
+      defaultImage = animales;
       break;
     case "Colores":
-      defaultImage = "../../src/assets/colores.png";
+      defaultImage = colores;
       break;
-    default:
-      defaultImage = ""; // Manejo del caso predeterminado
   }
 
   return (
@@ -44,7 +46,7 @@ const Card = styled.div`
   border-radius: 10px;
   padding: 20px;
   margin: 20px;
-  width: 300px;
+  width: 350px;
   text-align: center;
   background-color: #f8f1ff;
 

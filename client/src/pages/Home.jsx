@@ -7,8 +7,8 @@ function Home() {
       <main>
         <Grid container spacing={2} sx={{ mt: 10, textAlign: "center" }}>
           <Grid item xs={12}>
-            <Typography variant="h1" gutterBottom>
-              Bienvenido a App-rende En-señas
+            <Typography variant="h2" gutterBottom>
+              Bienvenido a Apprende EnSeñas
             </Typography>
             <Typography variant="h5">
               La primera plataforma de cursos en línea sobre LSM
@@ -18,7 +18,7 @@ function Home() {
         <Grid container spacing={2} sx={{ mt: 4 }}>
           <Grid item xs={12}>
             <Typography
-              variant="h2"
+              variant="h3"
               gutterBottom
               textAlign="center"
               sx={{ mb: 4 }}
